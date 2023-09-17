@@ -9,7 +9,7 @@ let app = express();
 app.use(cors());
 app.use(express.json());
 app.get("/", (req, res) => {
-  res.send("welcome TODO APP");
+  res.send("welcome Recipe APP");
 });
 app.use("/", userRouter);
 app.use("/", recipeRouter);
