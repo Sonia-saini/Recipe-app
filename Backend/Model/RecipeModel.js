@@ -4,6 +4,7 @@ const recipeschema = mongoose.Schema({
   summery: String,
   image: String,
   id: Number,
+  analyzedInstructions:Array,
   nutrition: { nutrients: Array, ingredients: Object },
 });
 const Recipemodel = mongoose.model("recipe", recipeschema);

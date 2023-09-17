@@ -1,7 +1,6 @@
 const authentication = (req, res, next) => {
-  const { Authorization } = req.headers;
-  console.log(req.headers);
-  if (!Authorization) {
+  const { authorization } = req.headers;
+  if (!authorization) {
     return res
       .status(400)
       .json({ msg: "You are not authorized user Please login First" });
