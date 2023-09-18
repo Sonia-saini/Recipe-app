@@ -4,7 +4,7 @@ const { authentication } = require("../Middlewares/authentication");
 const { getRecipe } = require("../ExternalApicall/RecipeApi");
 require("dotenv").config();
 const recipeRouter = express.Router();
-recipeRouter.get("/getrecipe", authentication, async (req, res) => {
+recipeRouter.get("/getrecipe", async (req, res) => {
   const { query, page, limit, sortby, sort } = req.query;
   try {
     let recipes = await getRecipe(query, page - 1, limit, sortby, sort);
