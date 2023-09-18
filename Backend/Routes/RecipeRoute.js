@@ -7,7 +7,8 @@ const recipeRouter = express.Router();
 recipeRouter.get("/getrecipe", authentication, async (req, res) => {
   const { query, page, limit, sortby, sort } = req.query;
   try {
-    let recipes = await getRecipe(query, page - 1, limit, sortby, sort);
+    let recipes = [];
+    recipes = await getRecipe(query, page - 1, limit, sortby, sort);
     await Recipemodel.insertMany(recipes);
     res.status(200).json({ recipes });
   } catch (err) {
