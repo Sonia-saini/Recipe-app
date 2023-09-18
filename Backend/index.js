@@ -14,7 +14,6 @@ app.get("/", (req, res) => {
 app.use("/", userRouter);
 app.use("/", recipeRouter);
 
-console.log(process.env.PORT);
 app.listen((process.env.PORT = 3002), async () => {
   try {
     await connection;
