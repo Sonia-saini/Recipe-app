@@ -7,10 +7,11 @@ const recipeRouter = express.Router();
 recipeRouter.get("/getrecipe", authentication, async (req, res) => {
   const { query, page, limit, sortby, sort } = req.query;
   try {
-    let recipes = [];
-    recipes = await getRecipe(query, page - 1, limit, sortby, sort);
-    await Recipemodel.insertMany(recipes);
-    res.status(200).json({ recipes });
+    let recipes = (await getRecipe(query, page - 1, limit, sortby, sort)) || [];
+    if (recipes.length > 0) {
+      await Recipemodel.insertMany(recipes);
+    }
+    res.status(200).json({ recipes: recipes });
   } catch (err) {
     res
       .status(400)
