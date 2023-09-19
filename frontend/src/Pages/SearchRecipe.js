@@ -48,7 +48,7 @@ function SearchRecipe() {
         placeholder="Search Recipe"
         w={{ base: "80%", xl: "40%", sm: "80%" }}
         border={"2px solid black"}
-        mt="100px"
+        mt="15px"
         borderRadius={"20px"}
         onChange={(e) => setQuery(e.target.value)}
       ></Input>

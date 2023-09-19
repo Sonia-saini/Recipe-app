@@ -19,25 +19,29 @@ const Links = [
     name: "Register",
     page: "/register",
   },
- 
+
   { name: "Favourite recipe", page: "/favouriterecipe" },
   { name: "Search Recipe", page: "/" },
-   JSON.parse(sessionStorage.getItem("loginuser"))?.email &&{ name:"Logout"}
-
+  JSON.parse(sessionStorage.getItem("loginuser"))?.email && { name: "Logout" },
 ];
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-console.log(JSON.parse(sessionStorage.getItem("loginuser")))
-const logout=()=>{
-    console.log("logout")
-    sessionStorage.removeItem("loginuser")
-    sessionStorage.removeItem("token")
-    return window.location.reload()
-}
+  console.log(JSON.parse(sessionStorage.getItem("loginuser")));
+  const logout = () => {
+    console.log("logout");
+    sessionStorage.removeItem("loginuser");
+    sessionStorage.removeItem("token");
+    return window.location.reload();
+  };
   return (
     <>
-      <Box px={4} bg="black" position={"fixed"} w="100%" top={0} mb="100px">
+      <Box
+        px={4}
+        bg="black"
+        w="100%"
+        fontSize={{ md: "26", base: "16", xl: "16", sm: "12" }}
+      >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
@@ -60,27 +64,31 @@ const logout=()=>{
               spacing={4}
               display={{ base: "none", md: "flex" }}
             >
-              {Links.map((link) => (
- link?.name==="Logout"?                  <Button
-onClick={logout}
-    key={link?.name}
-    _hover={{ color: "gray" }}
-    bg={"black"}
-    color={"white"}
-  >
-    {link?.name}
-  </Button>    :   <Link to={link?.page}>
-                {" "}
-                <Button
-                key={link?.name}
-                _hover={{ color: "gray" }}
-                bg={"black"}
-                color={"white"}
-                >
-                {link?.name}
-                </Button>
-            </Link>
-              ))}
+              {Links.map((link) =>
+                link?.name === "Logout" ? (
+                  <Button
+                    onClick={logout}
+                    key={link?.name}
+                    _hover={{ color: "gray" }}
+                    bg={"black"}
+                    color={"white"}
+                  >
+                    {link?.name}
+                  </Button>
+                ) : (
+                  <Link to={link?.page}>
+                    {" "}
+                    <Button
+                      key={link?.name}
+                      _hover={{ color: "gray" }}
+                      bg={"black"}
+                      color={"white"}
+                    >
+                      {link?.name}
+                    </Button>
+                  </Link>
+                )
+              )}
             </HStack>
           </HStack>
         </Flex>
@@ -95,22 +103,15 @@ onClick={logout}
                     key={link?.name}
                     _hover={{ color: "gray" }}
                     bg={"black"}
+                    onClick={() => link.name === "Logout" && logout()}
                     color={"white"}
                   >
                     {link.name === "Login" &&
+                    link.name !== "Logout" &&
                     JSON.parse(sessionStorage.getItem("loginuser")).email
                       ? JSON.parse(sessionStorage.getItem("loginuser")).email
                       : link?.name}
                   </Button>
-                {  link.name==="Logout"&&                  <Button
-                onClick={logout}
-                    key={link?.name}
-                    _hover={{ color: "gray" }}
-                    bg={"black"}
-                    color={"white"}
-                  >
-                    {link?.name}
-                  </Button>}
                 </Link>
               ))}
             </Stack>
