@@ -37,7 +37,7 @@ const logout=()=>{
 }
   return (
     <>
-      <Box px={4} bg="black">
+      <Box px={4} bg="black" position={"fixed"} w="100%" top={0} mb="100px">
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
