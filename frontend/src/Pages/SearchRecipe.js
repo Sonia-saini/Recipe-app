@@ -7,6 +7,7 @@ import {
   SimpleGrid,
   Spinner,
   Stack,
+  Text,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import SingleRecipe from "../Components/SingleRecipe";
