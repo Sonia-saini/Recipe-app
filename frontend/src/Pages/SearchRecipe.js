@@ -25,7 +25,7 @@ function SearchRecipe() {
   const getrecipe = () => {
     setData(true);
     fetch(
-      `https://salmon-moose-slip.cyclic.cloud/getrecipe?query=${query}&page=${page}&limit=${10}&sortby=${sortCategory}&sort=${sortorder}`,
+      `https://salmon-moose-slip.cyclic.cloud/getrecipe?query=${query.trim()}&page=${page}&limit=${10}&sortby=${sortCategory}&sort=${sortorder}`,
       {
         method: "GET",
         headers: {
