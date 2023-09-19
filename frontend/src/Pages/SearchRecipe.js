@@ -77,7 +77,7 @@ function SearchRecipe() {
         </Select>
       </SimpleGrid>
 
-      <SimpleGrid
+{  data.length>0?    <SimpleGrid
         columns={[1, 2, 3, 4]}
         gap="10px"
         w="95%"
@@ -85,7 +85,7 @@ function SearchRecipe() {
         mt={"15px"}
       >
         {data?.length > 0 && data?.map((el) => <SingleRecipe {...el} />)}
-      </SimpleGrid>
+      </SimpleGrid>:<Text fontWeight="400">Recipe Not Found</Text>}
 
       {data !== undefined ? (
         <Box m="auto" w="100%" justifySelf={"space-evenly"} gap="-50px">
