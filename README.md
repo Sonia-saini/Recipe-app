@@ -3,6 +3,10 @@ A small Recipe website where anybody can search recipes and make it particular r
 Backend :-
 npm install <br/> <br/> <br/>
 for start locally server :- npm run start  <br/> <br/> <br/>
+we need to add environment variable just like these
+PORT=port number; <br/> <br/> <br/>
+URL=mongodb database url <br/> <br/> <br/>
+key= any string <br/> <br/> <br/>
 User-registration API :- https://salmon-moose-slip.cyclic.cloud/register <br/> <br/> <br/>
 User-login API :- https://salmon-moose-slip.cyclic.cloud/login <br/> <br/> <br/>
 Search API :- https://salmon-moose-slip.cyclic.cloud/getrecipe?query=${recipe name}&page=${page number}&limit=${total number of recipe for every page}&sortby=${sortCategory name }&sort=${sortorder(asc||desc}
