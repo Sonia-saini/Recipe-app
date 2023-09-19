@@ -86,7 +86,7 @@ function SearchRecipe() {
         mt={"15px"}
       >
         {data?.length > 0 && data?.map((el) => <SingleRecipe {...el} />)}
-      </SimpleGrid>:<Text fontWeight="400">Recipe Not Found</Text>}
+      </SimpleGrid>:<Text fontWeight={"extrabold"} mb="60px" >Recipe Not Found</Text>}
 
       {data !== undefined ? (
         <Box m="auto" w="100%" justifySelf={"space-evenly"} gap="-50px">
