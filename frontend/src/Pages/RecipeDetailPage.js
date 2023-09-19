@@ -85,7 +85,7 @@ function RecipeDetailPage() {
           justifySelf={"flex-end"}
           _hover={{ color: "black", border: "2px solid black", bg: "white" }}
         >
-          Add to Favourite
+          {count % 2 === 0 ? "Add to Favourite" : "Remove from Favourite"}
         </Button>
 
         <Image src={recipe?.image} w="-webkit-fit-content" m="auto" />
