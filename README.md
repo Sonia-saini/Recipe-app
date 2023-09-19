@@ -3,7 +3,7 @@ A small Recipe website where anybody can search recipes and make it particular r
 Backend :-
 npm install <br/> <br/> <br/>
 for start locally server :- npm run start  <br/> <br/> <br/>
-we need to add environment variable just like these
+we need to add environment variable just like these :-<br/> <br/> <br/>
 PORT=port number; <br/> <br/> <br/>
 URL=mongodb database url <br/> <br/> <br/>
 key= any string <br/> <br/> <br/>
