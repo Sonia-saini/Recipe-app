@@ -18,7 +18,7 @@ function FavouriteRecipePage() {
           {data?.length > 0 && data?.map((el) => <SingleRecipe {...el} />)}
         </SimpleGrid>
       ) : (
-        <Text fontWeight={"extrabold"}>No Favourite Recipe</Text>
+        <Text fontWeight={"extrabold"} mt="100px">No Favourite Recipe</Text>
       )}
     </>
   );
